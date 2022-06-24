@@ -7,17 +7,33 @@ const Main = () => {
     return 10;
   };
   // object 안에 함수 만들 수 있음
-  const personInfo = {
-    name: 'kim',
-    plusOne(a: number) {
-      return a + 1;
-    }, //object 안의 함수 지정은 어떻게?(만약 parameter는 number, return 값도 number라면?)
-    changeName: (b: string) => {
-      return '지수';
-    },
+  type PERSON = {
+    name: string;
+    plusOne: (x: number) => number;
+    changeName: () => void;
   };
-  console.log(personInfo.changeName('경연'));
-  console.log(personInfo.plusOne(3));
+  const personInfo: PERSON = {
+    name: 'kim',
+    plusOne(x: number) {
+      return x + 1;
+    }, //object 안의 함수 지정은 어떻게?(만약 parameter는 number, return 값도 number라면?)
+    changeName: () => {},
+  };
+
+  type Cut = (x: string) => string;
+
+  const cutZero: Cut = x => {
+    const result = x.replace('/0/g', '');
+    return result;
+  };
+  console.log(cutZero('02560328'));
+
+  const removeDash = (x: string): number => {
+    const result = x.replace(/-/g, '');
+    console.log(result);
+    return Number(result);
+  };
+  console.log(removeDash('010-3392-0580'));
 
   //변수 안에 있는 함수를 가져다줌, 함수 안에 있는 코드 실행
 
@@ -30,7 +46,6 @@ const Main = () => {
   const newFunction = (a: 'hello') => {
     //이렇게 하면 앞으로 parameter 자리에는 무조건 'hello'만 올 수 있음
   };
-  console.log(newFunction('hello'));
 
   // 함수에 return 값도 지정가능
   const anotherFunction = (b: 'bye'): 1 | 0 => {
