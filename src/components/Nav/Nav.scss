@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.navWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: cneter;
+  height: 100%;
+  .categoryContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+    width: 100%;
+    max-width: rem(600px);
+    padding-left: 0;
+    height: 100%;
+    .categoryName {
+      list-style: none;
+      font-weight: 400;
+      font-size: rem(20px);
+      cursor: pointer;
+      // :hover {
+      //   cursor: pointer;
+      // }
+    }
+  }
+}

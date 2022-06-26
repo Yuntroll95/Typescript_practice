@@ -1,0 +1,14 @@
+[
+  {
+    "front": "가",
+    "number": 1234,
+    "flight_name": "KE1623",
+    "price": "21000",
+    "logo_url": "https://flights.myrealtrip.com/air/wfw/imgs/mbl/logo/air/KE.png",
+    "origin": "GMP",
+    "destination": "CJU",
+    "departure_time": "09:00",
+    "arrival_time": "10:20",
+    "duration": "01:20"
+  }
+]

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import BannerImage from '../../components/BannerImage/BannerImage';
+import Nav from '../../components/Nav/Nav';
+import './Main.scss';
 
 const Main = () => {
   // ----------- type alias에 함수 type 저장해서 사용하는 방법
@@ -135,7 +138,25 @@ const Main = () => {
     return num.toString().length; // number을 stirng로
   };
 
-  return <div>main</div>;
+  const newFunction1 = (x: unknown[]) => {
+    return x[0];
+  };
+  const a = newFunction1([4, 2]);
+  console.log(a);
+
+  // ----------------변수에 타입지정
+  const box: JSX.Element = <div></div>;
+  const box1: JSX.IntrinsicElements['h4'] = <h4>dfsdfsdfsdfsdf</h4>; // 여러가지 tag를 지정해준것
+
+  // -------------useState는 type지정이 자동으로 됨
+  const [people, setPeople] = useState('kim');
+
+  return (
+    <div className="mainContainer">
+      <Nav />
+      <BannerImage />
+    </div>
+  );
 };
 
 export default Main;

@@ -1,0 +1,14 @@
+@mixin align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignItems {
+  display: flex;
+  align-items: center;
+}
+
+@function rem($px, $base: 16px) {
+  @return $px / $base * 1rem;
+}
